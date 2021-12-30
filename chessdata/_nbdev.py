@@ -2,9 +2,12 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"hello": "00_core.ipynb"}
+index = {"pgn2df": "01_pgn2csv.ipynb",
+         "stockfish": "02_engine_analysis.ipynb",
+         "evaluate_game": "02_engine_analysis.ipynb"}
 
-modules = ["core.py"]
+modules = ["csv.py",
+           "engine.py"]
 
 doc_url = "https://NateSolon.github.io/chessdata/"
 
