@@ -8,6 +8,8 @@ import pandas as pd
 
 # Cell
 def pgn2df(pgn):
+    """Put the data from the PGN headers into a dataframe.
+    """
     game = chess.pgn.read_game(pgn)
     game_info = []
     while game:

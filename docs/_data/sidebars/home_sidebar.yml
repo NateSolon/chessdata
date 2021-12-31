@@ -13,7 +13,10 @@ entries:
       title: Import Games
       url: get_games.html
     - output: web,pdf
-      title: Title
+      title: ETF
+      url: pgn2csv.html
+    - output: web,pdf
+      title: Engine
       url: engine_analysis.html
     output: web
     title: chessdata

@@ -1,13 +1,13 @@
 ---
 
-title: Title
+title: Engine
 
 
 keywords: fastai
 sidebar: home_sidebar
 
-
-
+summary: "Use a chess engine to analyze moves."
+description: "Use a chess engine to analyze moves."
 nb_path: "02_engine_analysis.ipynb"
 ---
 <!--
@@ -43,7 +43,7 @@ nb_path: "02_engine_analysis.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stockfish</span> <span class="o">=</span> <span class="s2">&quot;stockfish_14_linux_x64_popcnt/stockfish_14_x64_popcnt&quot;</span> <span class="c1"># location of stockfish executable or alias</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stockfish</span> <span class="o">=</span> <span class="s2">&quot;stockfish_14_linux_x64_popcnt/stockfish_14_x64_popcnt&quot;</span> <span class="c1"># lcation of stockfish executable or alias</span>
 </pre></div>
 
     </div>
@@ -150,6 +150,7 @@ nb_path: "02_engine_analysis.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="evaluate_game" class="doc_header"><code>evaluate_game</code><a href="https://github.com/NateSolon/chessdata/tree/main/chessdata/engine.py#L11" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>evaluate_game</code>(<strong><code>game</code></strong>, <strong><code>engine</code></strong>, <strong><code>limit</code></strong>=<em><code>Limit(time=0.1)</code></em>)</p>
 </blockquote>
+<p>Go through a game move-by-move and evaluate each position with an engine.</p>
 
 </div>
 
@@ -207,61 +208,61 @@ nb_path: "02_engine_analysis.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[44,
- 41,
- -20,
- -8,
- -4,
- 13,
- 15,
- 60,
- 79,
- 87,
- -55,
- -50,
- -64,
- -73,
+<pre>[47,
+ 21,
+ -27,
+ -30,
+ -24,
+ -2,
+ 17,
+ 50,
+ 76,
+ 109,
+ -97,
+ -62,
  -71,
- -68,
- -112,
+ -98,
+ -102,
+ -90,
+ -147,
+ -122,
  -146,
- -115,
- -153,
  -161,
- -168,
- -118,
- -50,
+ -167,
+ -166,
+ -165,
  -49,
+ -58,
+ -79,
+ -41,
  -72,
- -84,
- -46,
  -61,
  -80,
- -52,
- -4,
- -103,
- -35,
+ -65,
+ -7,
  -45,
- 5,
- 0,
- 0,
- -22,
- 316,
- 405,
- 372,
- 381,
- 413,
- 417,
- 417,
- 416,
- 554,
- 542,
- 519,
- 531,
- 525,
- 523,
- 625,
- 633]</pre>
+ 4,
+ -1,
+ 16,
+ 1,
+ 3,
+ 8,
+ 290,
+ 289,
+ 362,
+ 437,
+ 350,
+ 397,
+ 354,
+ 382,
+ 551,
+ 543,
+ 537,
+ 517,
+ 513,
+ 530,
+ 591,
+ 596]</pre>
 </div>
 
 </div>
@@ -283,8 +284,9 @@ nb_path: "02_engine_analysis.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="evaluate_pgn" class="doc_header"><code>evaluate_pgn</code><a href="https://github.com/NateSolon/chessdata/tree/main/chessdata/engine.py#L23" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>evaluate_pgn</code>(<strong><code>pgn</code></strong>, <strong><code>engine</code></strong>, <strong><code>limit</code></strong>=<em><code>Limit(time=0.1)</code></em>)</p>
+<h4 id="evaluate_pgn" class="doc_header"><code>evaluate_pgn</code><a href="https://github.com/NateSolon/chessdata/tree/main/chessdata/engine.py#L25" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>evaluate_pgn</code>(<strong><code>pgn</code></strong>, <strong><code>engine</code></strong>, <strong><code>limit</code></strong>=<em><code>Limit(time=0.1)</code></em>)</p>
 </blockquote>
+<p>Evaluate all games in a PGN with the engine.</p>
 
 </div>
 
@@ -334,6 +336,24 @@ nb_path: "02_engine_analysis.ipynb"
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>55
+120
+137
+74
+53
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -344,7 +364,7 @@ nb_path: "02_engine_analysis.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">evals</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">evals</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -402,123 +422,123 @@ nb_path: "02_engine_analysis.ipynb"
   <tbody>
     <tr>
       <th>0</th>
-      <td>34</td>
-      <td>31</td>
+      <td>52</td>
+      <td>55</td>
+      <td>-27</td>
+      <td>-15</td>
+      <td>0</td>
+      <td>22</td>
       <td>-5</td>
-      <td>-12</td>
-      <td>-7</td>
-      <td>12</td>
-      <td>3</td>
+      <td>55</td>
+      <td>28</td>
       <td>48</td>
-      <td>50</td>
-      <td>75</td>
       <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>36</td>
-      <td>33</td>
-      <td>49</td>
+      <td>40</td>
+      <td>52</td>
       <td>37</td>
-      <td>44</td>
-      <td>43</td>
-      <td>48</td>
-      <td>20</td>
-      <td>22</td>
+      <td>34</td>
+      <td>34</td>
+      <td>21</td>
+      <td>31</td>
+      <td>15</td>
       <td>24</td>
+      <td>13</td>
       <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>43</td>
-      <td>33</td>
-      <td>-16</td>
-      <td>-6</td>
-      <td>-14</td>
-      <td>-7</td>
-      <td>6</td>
+      <td>38</td>
+      <td>44</td>
+      <td>-11</td>
       <td>0</td>
-      <td>20</td>
-      <td>15</td>
+      <td>-1</td>
+      <td>-13</td>
+      <td>-16</td>
+      <td>1</td>
+      <td>5</td>
+      <td>5</td>
       <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>9986.0</td>
+      <td>9984.0</td>
+      <td>9991.0</td>
+      <td>9992.0</td>
+      <td>9993.0</td>
+      <td>9994.0</td>
+      <td>9994.0</td>
+      <td>5870.0</td>
+      <td>9987.0</td>
+      <td>9988.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>29</td>
-      <td>25</td>
       <td>40</td>
-      <td>23</td>
+      <td>31</td>
+      <td>37</td>
+      <td>35</td>
+      <td>30</td>
+      <td>21</td>
+      <td>16</td>
+      <td>12</td>
+      <td>21</td>
       <td>24</td>
-      <td>25</td>
-      <td>25</td>
-      <td>11</td>
-      <td>9</td>
-      <td>18</td>
       <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>27</td>
       <td>40</td>
-      <td>57</td>
-      <td>-21</td>
-      <td>-22</td>
       <td>-29</td>
-      <td>-16</td>
-      <td>-5</td>
-      <td>-8</td>
-      <td>-45</td>
-      <td>-16</td>
+      <td>-25</td>
+      <td>-14</td>
+      <td>-13</td>
+      <td>-4</td>
+      <td>-17</td>
+      <td>-29</td>
+      <td>-37</td>
       <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>

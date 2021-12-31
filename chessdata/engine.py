@@ -9,22 +9,27 @@ import pandas as pd
 
 # Cell
 def evaluate_game(game, engine, limit=chess.engine.Limit(time=.1)):
+    """Go through a game move-by-move and evaluate each position with an engine.
+    """
     board = game.board()
     moves = game.mainline_moves()
     evals = []
     for move in moves:
         board.push(move)
         info = engine.analyse(board, limit=limit)
-        score = info["score"].pov(chess.WHITE).score()
+        score = info["score"].pov(chess.WHITE).score(mate_score=10_000)
         evals.append(score)
     return evals
 
 # Cell
 def evaluate_pgn(pgn, engine, limit=chess.engine.Limit(time=.1)):
+    """Evaluate all games in a PGN with the engine.
+    """
     game = chess.pgn.read_game(pgn)
     all_evals = []
     while game:
-        all_evals.append(evaluate_game(game, engine, limit))
+        evals = evaluate_game(game, engine, limit)
+        all_evals.append(evals)
         game = chess.pgn.read_game(pgn)
     df = pd.DataFrame(all_evals)
     return df

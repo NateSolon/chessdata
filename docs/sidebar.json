@@ -2,6 +2,7 @@
   "chessdata": {
     "Overview": "/",
     "Import Games": "get_games.html",
-    "Title": "engine_analysis.html"
+    "ETF": "pgn2csv.html",
+    "Engine": "engine_analysis.html"
   }
 }
