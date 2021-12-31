@@ -3,7 +3,6 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"pgn2df": "01_pgn2csv.ipynb",
-         "stockfish": "02_engine_analysis.ipynb",
          "evaluate_game": "02_engine_analysis.ipynb"}
 
 modules = ["csv.py",
