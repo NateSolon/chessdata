@@ -10,6 +10,9 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Import Games
+      url: get_games.html
+    - output: web,pdf
       title: Title
       url: engine_analysis.html
     output: web

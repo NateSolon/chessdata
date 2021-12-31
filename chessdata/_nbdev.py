@@ -3,9 +3,10 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"pgn2df": "01_pgn2csv.ipynb",
-         "evaluate_game": "02_engine_analysis.ipynb"}
+         "evaluate_game": "02_engine_analysis.ipynb",
+         "evaluate_pgn": "02_engine_analysis.ipynb"}
 
-modules = ["csv.py",
+modules = ["etf.py",
            "engine.py"]
 
 doc_url = "https://NateSolon.github.io/chessdata/"

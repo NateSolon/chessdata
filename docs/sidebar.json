@@ -1,6 +1,7 @@
 {
   "chessdata": {
     "Overview": "/",
+    "Import Games": "get_games.html",
     "Title": "engine_analysis.html"
   }
 }
