@@ -3,6 +3,7 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"pgn2df": "01_pgn2csv.ipynb",
+         "pgn2csv": "01_pgn2csv.ipynb",
          "evaluate_game": "02_engine_analysis.ipynb",
          "evaluate_pgn": "02_engine_analysis.ipynb"}
 
