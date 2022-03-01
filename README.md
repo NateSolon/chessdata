@@ -8,11 +8,11 @@ Access chess games with public APIs, convert chess formats like PGNs to data-fri
 
 Chess is a rich area for data analysis. Records of billions (!) of games are available for free. These can be mined not only for chess insights, but to research other areas of interest including explainable AI, fraud detection, and many others. But chess games are typically not stored in formats suitable for data analysis.
 
-This library contains tools to make it easier to do research with chess data. It allows you to convert PGNs - the most common format for chess games, which is human-readable but poorly suited to data analysis - and converts them to data-friendly formats like CSVs. It also contains utilities for using a chess engine to analyze large numbers of games.
+This library contains tools to make it easier to do research with chess data. It allows you to convert PGNs - the most common format for chess games, which is human-readable but poorly suited to data analysis - and converts them to data-friendly formats like CSVs. It also contains utilities for using a chess engine to analyze the quality of moves in large numbers of games.
 
 ## Install
 
-`git clone https://github.com/NateSolon/chessdata.git`
+`pip install chessdata`
 
 ## How to use
 
@@ -36,6 +36,19 @@ df.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
